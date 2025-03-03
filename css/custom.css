@@ -6,3 +6,45 @@
 .site-subtitle {
   font-family: 'YouYuan', sans-serif !important;
 }
+/* 外层容器，控制所有标签项的布局 */
+.tag-list {
+  display: flex;
+  flex-direction: column; /* 让标签项垂直排列 */
+  gap: 20px; /* 每个标签项之间的间距 */
+  margin-top: 20px; /* 页面顶部留白 */
+}
+/* 单个标签项的基础样式 */
+.tag-item {
+  width: 250px; /* 统一标签项宽度 */
+  text-align: center; /* 让内容居中 */
+  border-radius: 10px; /* 让边角变圆 */
+  overflow: hidden; /* 避免内容溢出 */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* 添加阴影效果 */
+  transition: transform 0.3s ease-in-out; /* 添加动画 */
+}
+/* 鼠标悬停时，标签项放大 */
+.tag-item:hover {
+  transform: scale(1.05);
+}
+/* 图片样式 */
+.tag-item img {
+  width: 100%; /* 让图片填满整个标签项 */
+  height: auto; /* 保持原比例 */
+  border-radius: 10px; /* 让图片边角变圆 */
+}
+/* 文字说明样式 */
+.tag-item p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #333;
+}
+/* 左对齐的标签项 */
+.tag-item.left {
+  margin-left: 10%; /* 向右偏移 10% */
+}
+/* 右对齐的标签项 */
+.tag-item.right {
+  margin-left: auto; /* 让元素靠右 */
+  margin-right: 10%; /* 向左偏移 10% */
+}
