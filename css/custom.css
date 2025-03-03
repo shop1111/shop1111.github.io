@@ -1,0 +1,8 @@
+@font-face {
+  font-family: '汉仪相思';
+  src: url("/fonts/HTYYXSTJ.ttf") format('truetype');
+}
+.site-title,
+.site-subtitle {
+  font-family: 'YouYuan', sans-serif !important;
+}
