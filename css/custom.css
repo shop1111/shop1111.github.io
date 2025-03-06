@@ -1,0 +1,13 @@
+/* 定义字体 */
+@font-face {
+    font-family: 'HTLL'; /* 字体的名称 */
+    src: url('/fonts/HTYYXSTJ.ttf') format('ttf'); /* WOFF2 格式 */
+    font-weight: normal; /* 字体粗细 */
+    font-style: normal; /* 字体样式 */
+}
+
+/* 使用字体 */
+body {
+    font-family: 'HTLL', sans-serif; /* 使用自定义字体，如果无法加载则回退到 sans-serif */
+}
+
