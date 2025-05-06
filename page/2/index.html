@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>羊习习在学习 - 记录 • 学习</title><meta name="author" content="羊习习"><meta name="copyright" content="羊习习"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录 • 学习">
+<meta property="og:type" content="website">
+<meta property="og:title" content="羊习习在学习">
+<meta property="og:url" content="https://shop1111.github.io/page/2/index.html">
+<meta property="og:site_name" content="羊习习在学习">
+<meta property="og:description" content="记录 • 学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shop1111.github.io/img/avatar.jpg">
+<meta property="article:author" content="羊习习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shop1111.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon_256.ico"><link rel="canonical" href="https://shop1111.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '羊习习在学习',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css"><style>
+  body {
+      font-family: 'LXGW',consola,sans-serif !important;
+      font-size: 17px; /* 默认字体大小 */
+  }
+</style>
+<meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">羊习习在学习</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">羊习习在学习</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2025/03/12/C++%E7%9A%84sort%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8E%92%E5%AE%9E%E7%8E%B0/" title="C++：sort使用技巧以及快排实现"><img class="post-bg" src="/blog_sources/img/aniya6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：sort使用技巧以及快排实现"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/03/12/C++%E7%9A%84sort%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8E%92%E5%AE%9E%E7%8E%B0/" title="C++：sort使用技巧以及快排实现">C++：sort使用技巧以及快排实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-12T07:54:40.551Z" title="发表于 2025-03-12 15:54:40">2025-03-12</time></span></div><div class="content">sort()简介sort() 是 C++ 标准库中的一个排序函数，定义在 $algorithm$ 头文件中。它的排序时间复杂度是$O(nlgn)$，远胜于普通的冒泡排序和选择排序。现在介绍其函数重载、使用方法以及快速排序的具体实现。 sort()使用方法默认排序(不传入函数参数)1234567891011#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;int main()&#123;    vector&lt;int&gt; example=&#123;11,42,3,24&#125;;    sort(example.begin(),example.end());//传入迭代器或指针，指向开头和结尾，默认是升序排序    int example1[]=&#123;22,33,11&#125;;   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/03/09/C++%20String%E7%B1%BB%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="C++：String类"><img class="post-bg" src="/blog_sources/img/aniya1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：String类"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/03/09/C++%20String%E7%B1%BB%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="C++：String类">C++：String类</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-09T05:48:54.776Z" title="发表于 2025-03-09 13:48:54">2025-03-09</time></span></div><div class="content">💡string类初始化常用的初始化有赋值初始化与直接初始化在C++种，还可以用列表初始化，但在string类初始化中并不常见1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123;    string z;//初始化空字符串    string a =&quot;Hello, world&quot;;//复制c风格字符串直到遇到&#x27;\0&#x27;    string b(&quot;Hello!&quot;);//调用构造函数复制c风格字符串    string b1=string(&quot;Hello!&quot;);//与上一种写法等价    string c(5,&#x27;z&#x27;);    string d(&quot;HelloWorld&quot;, 5);  // &quot;Hello&quot;,取C风格字符串的前n个    string...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/02/27/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8ASTL%E4%BD%BF%E7%94%A8/" title="哈希表原理以及STL使用示例"><img class="post-bg" src="/blog_sources/img/aniya2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈希表原理以及STL使用示例"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/27/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8ASTL%E4%BD%BF%E7%94%A8/" title="哈希表原理以及STL使用示例">哈希表原理以及STL使用示例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-02-27T12:52:35.912Z" title="发表于 2025-02-27 20:52:35">2025-02-27</time></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/02/26/hexo%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/" title="hexo部署/美化踩坑"><img class="post-bg" src="/blog_sources/img/aniya11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo部署/美化踩坑"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/26/hexo%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/" title="hexo部署/美化踩坑">hexo部署/美化踩坑</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-02-26T15:21:36.638Z" title="发表于 2025-02-26 23:21:36">2025-02-26</time></span></div><div class="content">前言在经过几天的努力后，终于搭建起了个人的hexo博客，使用蝴蝶主题。个中过程有许多琐碎细节，在此写出，以供参考。在部署成功之前的bug已有许多成熟教程，不再赘述。 部署博客时间线                 2025                     02-24     部署好hexo框架（此前细节不表）                02-26     解决LaTex公式渲染问题                02-27     发现封面报错和字体报错                03-02     解决多次部署的bug问题                03-03                   发现网站配置英语问题如何解决       新建页面（标签页）                            03-03     自设标签页美化                03-06                   调整md文档背景以及博客中出现的所有白色背景       字体美化                   ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/02/25/C++%E7%9A%84vector%E5%AE%B9%E5%99%A8/" title="C++：vector容器"><img class="post-bg" src="/blog_sources/img/aniya9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：vector容器"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/25/C++%E7%9A%84vector%E5%AE%B9%E5%99%A8/" title="C++：vector容器">C++：vector容器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-02-24T16:14:56.563Z" title="发表于 2025-02-25 00:14:56">2025-02-25</time></span></div><div class="content">一、vector1.1 vector是什么vector是C++标准库提供的一个容器类，可以理解为可变长度数组。在初始定义时无需申明长度，可以一直往后填充数据。填充时，vector容器会自动拓宽可用空间。储存该容器类的头文件是\vector储存的数据是连续的，和数组一样 一般地，vector拓宽空间时会将已有空间翻倍。 假如vector所处地址没有这么大的连续内存可供使用，编译器会进行内容重分配：寻找一处可存放翻倍后的vector数组的连续空间，将vector数组拷贝过去，时间复杂度是$O(n)$ 也因此，有时候使用vector的速度会比使用普通数组慢一点 1.2 vector提供的一些方法让我们先来看一个具体的vector使用示例： 1234567891011121314#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int main()&#123;    vector&lt;int&gt; a=&#123;12,33,4&#125;;   ...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">羊习习</div><div class="author-info-description">记录 • 学习</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/shop1111"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的世界</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/06/C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="C++：虚函数和类型转换"><img src="/blog_sources/img/aniya2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：虚函数和类型转换"/></a><div class="content"><a class="title" href="/2025/05/06/C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="C++：虚函数和类型转换">C++：虚函数和类型转换</a><time datetime="2025-05-06T01:18:56.155Z" title="发表于 2025-05-06 09:18:56">2025-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/29/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" title="基本算法"><img src="/blog_sources/img/aniya10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基本算法"/></a><div class="content"><a class="title" href="/2025/04/29/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" title="基本算法">基本算法</a><time datetime="2025-04-29T01:28:16.979Z" title="发表于 2025-04-29 09:28:16">2025-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/25/C++%EF%BC%9A%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/" title="C++：类的继承"><img src="/blog_sources/img/aniya5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：类的继承"/></a><div class="content"><a class="title" href="/2025/04/25/C++%EF%BC%9A%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/" title="C++：类的继承">C++：类的继承</a><time datetime="2025-04-25T11:23:48.458Z" title="发表于 2025-04-25 19:23:48">2025-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/pytorch%E5%AE%89%E8%A3%85/" title="pytorch学习"><img src="/blog_sources/img/aniya6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytorch学习"/></a><div class="content"><a class="title" href="/2025/04/16/pytorch%E5%AE%89%E8%A3%85/" title="pytorch学习">pytorch学习</a><time datetime="2025-04-16T07:45:27.740Z" title="发表于 2025-04-16 15:45:27">2025-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/07/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="高级数据结构"><img src="/blog_sources/img/aniya9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高级数据结构"/></a><div class="content"><a class="title" href="/2025/04/07/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="高级数据结构">高级数据结构</a><time datetime="2025-04-07T08:36:11.185Z" title="发表于 2025-04-07 16:36:11">2025-04-07</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 1.23em; color: #999ea6">实践</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.5em; color: #99a9bf">算法</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">深度学习</a> <a href="/tags/C/" style="font-size: 1.37em; color: #99a4b2">C++</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/02/">
+            <span class="card-archive-list-date">
+              二月 2025
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-06T05:28:50.624Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 羊习习</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text">如有帮助，万分荣幸</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
