@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>羊习习在学习 | 羊习习在学习</title><meta name="author" content="羊习习"><meta name="copyright" content="羊习习"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="建表数据类型关键字     关键字 含义 使用建议 示例     INT 整数 用于 ID、数量、年龄。 id INT   VARCHAR(n) 可变长度字符串 最常用。用于姓名、地址、账号。n 是最大长度。 name VARCHAR(50)   CHAR(n) 固定长度字符串 用于长度固定的数据，如身份证号、性别(M&#x2F;F)、哈希值。 gender CHAR(1)   DATETIME 日期和时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="羊习习在学习">
+<meta property="og:url" content="https://shop1111.github.io/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="羊习习在学习">
+<meta property="og:description" content="建表数据类型关键字     关键字 含义 使用建议 示例     INT 整数 用于 ID、数量、年龄。 id INT   VARCHAR(n) 可变长度字符串 最常用。用于姓名、地址、账号。n 是最大长度。 name VARCHAR(50)   CHAR(n) 固定长度字符串 用于长度固定的数据，如身份证号、性别(M&#x2F;F)、哈希值。 gender CHAR(1)   DATETIME 日期和时间">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shop1111.github.io/img/aniya_img/aniya4.png">
+<meta property="article:published_time" content="2025-11-17T06:55:57.040Z">
+<meta property="article:modified_time" content="2025-12-01T07:31:14.376Z">
+<meta property="article:author" content="羊习习">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shop1111.github.io/img/aniya_img/aniya4.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://shop1111.github.io/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/",
+  "image": "https://shop1111.github.io/img/aniya_img/aniya4.png",
+  "datePublished": "2025-11-17T06:55:57.040Z",
+  "dateModified": "2025-12-01T07:31:14.376Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "羊习习",
+      "url": "https://shop1111.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon_256.ico"><link rel="canonical" href="https://shop1111.github.io/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '羊习习在学习',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><style>
+  body {
+      font-family: 'LXGW',consola,sans-serif !important;
+      font-size: 17px; /* 默认字体大小 */
+  }
+</style>
+<meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">羊习习在学习</span></a><a class="nav-page-title" href="/"><span class="site-name">羊习习在学习</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/my_tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-11-17T06:55:57.040Z" title="发表于 2025-11-17 14:55:57">2025-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-01T07:31:14.376Z" title="更新于 2025-12-01 15:31:14">2025-12-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h1><p><strong>数据类型关键字</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>关键字</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>使用建议</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>INT</strong></td>
+<td>整数</td>
+<td>用于 ID、数量、年龄。</td>
+<td><code>id INT</code></td>
+</tr>
+<tr>
+<td><strong>VARCHAR(n)</strong></td>
+<td>可变长度字符串</td>
+<td><strong>最常用</strong>。用于姓名、地址、账号。<code>n</code> 是最大长度。</td>
+<td><code>name VARCHAR(50)</code></td>
+</tr>
+<tr>
+<td><strong>CHAR(n)</strong></td>
+<td>固定长度字符串</td>
+<td>用于长度固定的数据，如身份证号、性别(M/F)、哈希值。</td>
+<td><code>gender CHAR(1)</code></td>
+</tr>
+<tr>
+<td><strong>DATETIME</strong></td>
+<td>日期和时间</td>
+<td>格式 <code>YYYY-MM-DD HH:MM:SS</code>。用于起飞时间、下单时间。</td>
+<td><code>fly_time DATETIME</code></td>
+</tr>
+<tr>
+<td><strong>DATE</strong></td>
+<td>仅日期</td>
+<td>格式 <code>YYYY-MM-DD</code>。用于生日。</td>
+<td><code>birthday DATE</code></td>
+</tr>
+<tr>
+<td><strong>DECIMAL(M, D)</strong></td>
+<td>精确小数</td>
+<td><strong>涉及钱一定要用它</strong>。<code>M</code>是总位数，<code>D</code>是小数位。</td>
+<td><code>price DECIMAL(10, 2)</code><br><br>(代表最多10位数字，其中包含2位小数)</td>
+</tr>
+<tr>
+<td><strong>TEXT</strong></td>
+<td>长文本</td>
+<td>用于存储文章内容、很长的备注。</td>
+<td><code>content TEXT</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>**列属性/约束关键字</p>
+<p>这些关键字跟在数据类型后面，用来限制数据的行为。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>关键字</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PRIMARY KEY</strong></td>
+<td><strong>主键</strong></td>
+<td><strong>最重要的关键字</strong>。整张表的唯一身份证，不能重复，不能为空。</td>
+<td><code>id INT PRIMARY KEY</code></td>
+</tr>
+<tr>
+<td><strong>AUTO_INCREMENT</strong></td>
+<td>自增</td>
+<td>只能配合整数主键使用。让数据库自动填 1, 2, 3…</td>
+<td><code>id INT PRIMARY KEY AUTO_INCREMENT</code></td>
+</tr>
+<tr>
+<td><strong>NOT NULL</strong></td>
+<td>非空</td>
+<td>必填项。如果插入数据时没填这列，会报错。NULL与之相反。</td>
+<td><code>username VARCHAR(20) NOT NULL</code></td>
+</tr>
+<tr>
+<td><strong>UNIQUE</strong></td>
+<td>唯一</td>
+<td>这列的值不能重复（但可以为空）。常用于手机号、邮箱。</td>
+<td><code>phone VARCHAR(11) UNIQUE</code></td>
+</tr>
+<tr>
+<td><strong>DEFAULT</strong></td>
+<td>默认值</td>
+<td>如果不填，就用这个预设值。</td>
+<td><code>status INT DEFAULT 0</code></td>
+</tr>
+<tr>
+<td><strong>COMMENT</strong></td>
+<td>注释</td>
+<td>给代码写备注，方便以后维护。</td>
+<td><code>COMMENT &#39;航班号&#39;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p><strong>表级设置</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>关键字</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ENGINE=InnoDB</strong></td>
+<td>存储引擎</td>
+<td>MySQL 的默认引擎，支持事务（Transaction），<strong>做项目必选</strong>。</td>
+</tr>
+<tr>
+<td><strong>CHARSET=utf8mb4</strong></td>
+<td>字符集</td>
+<td><strong>强烈建议加上</strong>。支持中文，甚至支持 Emoji 表情。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p><strong>航班管理表示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE flights (</span><br><span class="line">    -- 1. 主键</span><br><span class="line">    flight_id INT PRIMARY KEY AUTO_INCREMENT COMMENT &#x27;内部流水号ID&#x27;,</span><br><span class="line">    </span><br><span class="line">    -- 2. 必填 (NOT NULL)</span><br><span class="line">    flight_code VARCHAR(10) NOT NULL COMMENT &#x27;航班号，如 CA1001&#x27;,</span><br><span class="line">    aircraft_model VARCHAR(20) NOT NULL COMMENT &#x27;机型&#x27;,</span><br><span class="line">    </span><br><span class="line">    -- 3. 时间与地点 (DATETIME)</span><br><span class="line">    origin VARCHAR(50) NOT NULL COMMENT &#x27;出发地&#x27;,</span><br><span class="line">    destination VARCHAR(50) NOT NULL COMMENT &#x27;目的地&#x27;,</span><br><span class="line">    departure_time DATETIME NOT NULL COMMENT &#x27;计划起飞时间&#x27;,</span><br><span class="line">    </span><br><span class="line">    -- 4. 金额与状态 (DECIMAL + DEFAULT)</span><br><span class="line">    price DECIMAL(10, 2) NOT NULL DEFAULT 0.00 COMMENT &#x27;票价&#x27;,</span><br><span class="line">    status VARCHAR(10) DEFAULT &#x27;Scheduled&#x27; COMMENT &#x27;状态：Scheduled, Delayed, Cancelled&#x27;,</span><br><span class="line">    </span><br><span class="line">    -- 5. 选填信息 (没有 NOT NULL)</span><br><span class="line">    gate_number VARCHAR(5) COMMENT &#x27;登机口，可能还没分配所以允许为空&#x27;,</span><br><span class="line">    </span><br><span class="line">    -- 6. 约束加强 (UNIQUE)</span><br><span class="line">    -- 确保同一天不会有重复的航班号 (联合唯一索引，选学)</span><br><span class="line">    UNIQUE (flight_code, departure_time)</span><br><span class="line"></span><br><span class="line">) ENGINE=InnoDB CHARSET=utf8mb4 COMMENT=&#x27;航班信息主表&#x27;;</span><br></pre></td></tr></table></figure>
+<p><strong>这里的几个设计细节：</strong></p>
+<ol>
+<li><p><strong><code>utf8mb4</code></strong>：防止你存入中文地名时出现乱码。</p>
+</li>
+<li><p><strong><code>DECIMAL(10, 2)</code></strong>：票价用了 <code>DECIMAL</code> 而不是 <code>FLOAT</code>，保证金额计算精确（浮点数在计算机里容易出现 99.999999 这种情况）。</p>
+</li>
+<li><p><strong><code>COMMENT</code></strong>：每一行都加了注释，这在多人协作（或者你过两周再看代码）时非常有用。</p>
+</li>
+</ol>
+<h1 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h1><p>可以一次添加一条数据，也可以一次性添加多条数据。</p>
+<p><strong>基本语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 表名 (列名1, 列名2, ...)</span><br><span class="line">VALUES (值1, 值2, ...);</span><br></pre></td></tr></table></figure>
+<p><strong>添加一条数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, name, score)</span><br><span class="line">VALUES (102, &#x27;李四&#x27;, 88);</span><br></pre></td></tr></table></figure>
+<p><strong>情况 B：添加多条数据 (批量插入)</strong></p>
+<p>只需在 <code>VALUES</code> 后用逗号分隔多组括号即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, name, score)</span><br><span class="line">VALUES </span><br><span class="line">    (103, &#x27;王五&#x27;, 90),</span><br><span class="line">    (104, &#x27;赵六&#x27;, 76);</span><br></pre></td></tr></table></figure>
+<h1 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h1><p>要修改某一条特定数据，需要通过 <code>WHERE</code> 子句来指定条件，否则整张表的数据都会被修改。</p>
+<p><strong>基本语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 表名</span><br><span class="line">SET 列名1 = 新值1, 列名2 = 新值2, ...</span><br><span class="line">WHERE 筛选条件;</span><br></pre></td></tr></table></figure>
+<p><strong>示例场景：</strong> 将名字为 “张三” (id 为 101) 的同学的分数修改为 95 分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE students</span><br><span class="line">SET score = 95</span><br><span class="line">WHERE id = 101;</span><br></pre></td></tr></table></figure>
+<h1 id="修改列"><a href="#修改列" class="headerlink" title="修改列"></a>修改列</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 修改列定义，将默认值改为 &#x27;未支付&#x27;</span><br><span class="line">ALTER TABLE orders MODIFY COLUMN status VARCHAR(20) DEFAULT &#x27;未支付&#x27; COMMENT &#x27;订单状态&#x27;;</span><br><span class="line"></span><br><span class="line">-- 如果你想把之前所有的旧数据也一起刷成 &#x27;未支付&#x27; (可选)</span><br><span class="line">-- UPDATE orders SET status = &#x27;未支付&#x27; WHERE status = &#x27;已支付&#x27;;</span><br></pre></td></tr></table></figure>
+<h1 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://shop1111.github.io">羊习习</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://shop1111.github.io/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/">https://shop1111.github.io/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://shop1111.github.io" target="_blank">羊习习在学习</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a></div><div class="post-share"><div class="social-share" data-image="/img/aniya_img/aniya4.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/11/11/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/QTLearning/" title=""><img class="cover" src="/img/aniya_img/aniya8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2"></div></div><div class="info-2"><div class="info-item-1">QT类机制解析新建一个QT类后，会自动生成三个文件classA.ui, classA.h, classA.cpp 其中，.ui文件是可视化的ui设计文件。在构建项目时，.ui文件以xml文件的形式被读取，向classA中写入各种控件指针和setupUi函数。 所以可以看到，QT提供的代码中可以通过ui-&gt;setupUi(this)为当前对象写入各种控件 槽机制：命名对应QT槽机制是通过Q_OBJECT宏实现的，这个宏会根据命名匹配的规则，自动匹配控件名和信号到对应的函数上。如on_loginButton_clicked()就是实现在loginButton控件上发出clicked信号后应该实现的函数。 QHTTPQT路由注册Qt 官方要求：QHttpServer 的路由函数必须传 free-function 或 lambda，不允许传成员函数指针。 因此模板推导会失败，引发你看到的巨量错误： &#39;operator()&#39; is not a member of &#39;QHttpServerResponse (FlightsApi::*)(...)&#39;...</div></div></div></a><a class="pagination-related" href="/2025/11/26/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/Git%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C/" title="Git管理经验"><img class="cover" src="/img/aniya_img/aniya14.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Git管理经验</div></div><div class="info-2"><div class="info-item-1">Git 远程推送与同步指南首次推送当你第一次将本地代码推送到远程仓库时，使用以下命令： 1、初始化文件夹，添加git配置 1git init 2、为git添加一个名为origin的远程地址（仓库） 1git remote add origin https://github.com/你的用户名/仓库名.git 3、将本地缓存区的代码推送到origin这个远程仓库的main分支 1git push -u origin main -u等同于 --set-upstream，它将地址写入项目文件夹的.git/config，它告诉 Git，“以后如果不指定目标，默认就推送到 origin 的 main 分支”。 这样以后的推送只需要输入 git push 即可，无需再敲长命令。  首次拉取1. 最常用的方式：克隆 (Clone)这是将远程仓库“搬家”到你本地的最快方式。 1git clone https://github.com/你的用户名/仓库名.git git clone 是一个“打包套餐”，它一次性帮你做完了以下三件事：  git init：创建了一个新的文件夹，并初始化了...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">羊习习</div><div class="author-info-description">记录 • 学习</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/shop1111"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的世界</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">建表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">添加数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">修改数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%88%97"><span class="toc-number">4.</span> <span class="toc-text">修改列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%96%E9%94%AE"><span class="toc-number">5.</span> <span class="toc-text">外键</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/11/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="神经网络"><img src="/img/aniya_img/aniya11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络"/></a><div class="content"><a class="title" href="/2025/11/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="神经网络">神经网络</a><time datetime="2025-11-28T06:43:20.088Z" title="发表于 2025-11-28 14:43:20">2025-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/26/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/Git%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C/" title="Git管理经验"><img src="/img/aniya_img/aniya14.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git管理经验"/></a><div class="content"><a class="title" href="/2025/11/26/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/Git%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C/" title="Git管理经验">Git管理经验</a><time datetime="2025-11-26T07:13:39.545Z" title="发表于 2025-11-26 15:13:39">2025-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/" title="无标题"><img src="/img/aniya_img/aniya4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/11/17/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/MySQL%E5%AD%A6%E4%B9%A0/" title="无标题">无标题</a><time datetime="2025-11-17T06:55:57.040Z" title="发表于 2025-11-17 14:55:57">2025-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/11/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/QTLearning/" title="无标题"><img src="/img/aniya_img/aniya8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/11/11/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/QTLearning/" title="无标题">无标题</a><time datetime="2025-11-11T00:57:38.013Z" title="发表于 2025-11-11 08:57:38">2025-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/10/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E7%99%BB%E9%99%86%E7%B3%BB%E7%BB%9Fdemo%E5%BB%BA%E7%AB%8B/" title="无标题"><img src="/img/aniya_img/aniya6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/11/10/QT%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E7%99%BB%E9%99%86%E7%B3%BB%E7%BB%9Fdemo%E5%BB%BA%E7%AB%8B/" title="无标题">无标题</a><time datetime="2025-11-10T06:42:57.729Z" title="发表于 2025-11-10 14:42:57">2025-11-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 羊习习</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text">如有帮助，万分荣幸</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"emoji":true,"reaction":false}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://comments-rho-azure.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
