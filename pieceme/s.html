@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>拼忆 · 收到一份拼图</title>
+<style>
+  :root {
+    --page: #FAF6F0;
+    --surface: #FFFFFF;
+    --primary: #D9663F;
+    --primary-soft: #FBE7DD;
+    --on-primary: #FFFFFF;
+    --text: #2B2420;
+    --text-2: #7A6E66;
+    --divider: #ECE3D9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #1A1714;
+      --surface: #25211D;
+      --primary: #EE8F68;
+      --primary-soft: #3B2A21;
+      --on-primary: #1A1714;
+      --text: #F3EDE6;
+      --text-2: #B4A99F;
+      --divider: #3A332D;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page);
+    color: var(--text);
+    font-family: -apple-system, "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  main {
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .brand { font-size: 15px; color: var(--text-2); letter-spacing: 2px; }
+  h1 { margin: 0; font-size: 24px; }
+  .card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 6px 18px rgba(80, 50, 30, 0.08);
+    text-align: center;
+  }
+  .label { font-size: 13px; color: var(--text-2); }
+  .code {
+    margin: 8px 0 4px;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--primary);
+  }
+  .button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .primary { background: var(--primary); color: var(--on-primary); }
+  .secondary { background: var(--primary-soft); color: var(--primary); }
+  ol { margin: 0; padding-left: 20px; color: var(--text-2); font-size: 14px; line-height: 1.8; }
+  .note { font-size: 13px; color: var(--text-2); line-height: 1.7; }
+  .note a { color: var(--primary); }
+  .missing { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">拼忆 · PieceMe</div>
+  <h1 id="title">朋友给你发了一份拼图</h1>
+
+  <div class="card" id="found">
+    <div class="label">分享码</div>
+    <div class="code" id="code">------</div>
+    <div class="label">7天内有效，拼完才能看到完整照片和留言</div>
+  </div>
+
+  <a class="button primary" id="open" href="#">在拼忆中打开</a>
+  <button class="button secondary" id="copy" type="button">复制分享码</button>
+
+  <div class="card" style="text-align: left">
+    <ol>
+      <li>点上面的“在拼忆中打开”，会直接进入这份拼图。</li>
+      <li>没有反应的话，复制分享码，打开拼忆。</li>
+      <li>在“记忆”页右下角点分享箭头，选“输入分享码”，粘贴后就能拼。</li>
+    </ol>
+  </div>
+
+  <p class="note">
+    还没装拼忆？在华为应用市场搜索“拼忆”，或者
+    <a href="https://appgallery.huawei.com/app/detail?id=com.shop1111.pieceme">打开应用市场页面</a>。
+    不用登录也能拼。
+  </p>
+  <p class="note missing" id="missing">这个链接里没有分享码，请让朋友重新发一次。</p>
+</main>
+<script>
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var code = (params.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (code.length !== 6) {
+      document.getElementById('found').style.display = 'none';
+      document.getElementById('open').style.display = 'none';
+      document.getElementById('copy').style.display = 'none';
+      document.getElementById('missing').style.display = 'block';
+      return;
+    }
+    document.getElementById('code').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+    // The same link: with App Linking set up, tapping it opens the app straight away.
+    document.getElementById('open').href = location.origin + location.pathname + '?c=' + code;
+    var copy = document.getElementById('copy');
+    copy.addEventListener('click', function () {
+      var done = function () { copy.textContent = '已复制'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () { window.prompt('长按复制分享码', code); });
+      } else {
+        window.prompt('长按复制分享码', code);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
